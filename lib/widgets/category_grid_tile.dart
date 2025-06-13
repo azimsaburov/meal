@@ -14,7 +14,7 @@ class CategoryGridTile extends StatelessWidget {
       borderRadius: BorderRadius.circular(20),
       splashColor: Colors.black,
       onTap:() {
-        
+        Navigator.pushReplacementNamed(context, '/meals');
       },
       child: Container(
         padding: EdgeInsets.all(16),
