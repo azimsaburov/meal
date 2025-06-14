@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:meal/models/category_model.dart';
+import 'package:meal/models/meal_model.dart';
 
 class CategoryGridTile extends StatelessWidget {
   final CategoryModel category;
+  final List<MealModel> meals;
 
-  const CategoryGridTile({super.key, required this.category});
+  const CategoryGridTile({super.key, required this.category, required this.meals});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,7 @@ class CategoryGridTile extends StatelessWidget {
       borderRadius: BorderRadius.circular(20),
       splashColor: Colors.black,
       onTap:() {
-        Navigator.pushReplacementNamed(context, '/meals');
+        Navigator.pushReplacementNamed(context, '/meals', arguments: [category.title, meals]);
       },
       child: Container(
         padding: EdgeInsets.all(16),

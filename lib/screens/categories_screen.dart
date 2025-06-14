@@ -17,7 +17,15 @@ class CategoriesScreen extends StatelessWidget {
         padding: EdgeInsets.all(10),
         children: List.generate(
           categories.length,
-          (index) => CategoryGridTile(category: categories[index]),
+          (index) => CategoryGridTile(
+            category: categories[index],
+            //блюда Где хоть один элемент из списка categoryIds в MealModel равен id в CategoryModel
+            meals: meals.where((meal) {
+              return meal.categoryIds.any((id){
+                return id == categories[index].id;
+              });
+            }).toList(),
+          ),
         ),
       ),
     );
