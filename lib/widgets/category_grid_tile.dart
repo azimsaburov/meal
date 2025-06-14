@@ -6,7 +6,11 @@ class CategoryGridTile extends StatelessWidget {
   final CategoryModel category;
   final List<MealModel> meals;
 
-  const CategoryGridTile({super.key, required this.category, required this.meals});
+  const CategoryGridTile({
+    super.key,
+    required this.category,
+    required this.meals,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -15,8 +19,12 @@ class CategoryGridTile extends StatelessWidget {
     return InkWell(
       borderRadius: BorderRadius.circular(20),
       splashColor: Colors.black,
-      onTap:() {
-        Navigator.pushReplacementNamed(context, '/meals', arguments: [category.title, meals]);
+      onTap: () {
+        Navigator.pushReplacementNamed(
+          context,
+          '/meals',
+          arguments: category.title,
+        );
       },
       child: Container(
         padding: EdgeInsets.all(16),
@@ -31,7 +39,12 @@ class CategoryGridTile extends StatelessWidget {
           ),
           borderRadius: BorderRadius.circular(20),
         ),
-        child: Text(category.title),
+        child: Text(
+          category.title,
+          style: Theme.of(context).textTheme.titleMedium?.copyWith(
+            color: Theme.of(context).colorScheme.onSurface,
+          ),
+        ),
       ),
     );
   }

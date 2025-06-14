@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-//import 'package:meal/models/category_model.dart';
-import 'package:meal/models/meal_model.dart';
+import 'package:meal/data/dammy_data.dart';
+import 'package:meal/widgets/meal_list_item.dart';
 
 class MealsScreen extends StatelessWidget {
   const MealsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final arg = ModalRoute.of(context)?.settings.arguments as List;
-    final String titile = arg[0];
-    final List<MealModel> meal = arg[1];
+    final arg = ModalRoute.of(context)?.settings.arguments as String;
+    final String titile = arg;
     return Scaffold(
       appBar: AppBar(
         title: Text(titile),
@@ -20,20 +19,10 @@ class MealsScreen extends StatelessWidget {
           icon: Icon(Icons.arrow_back_ios_new),
         ),
       ),
-      body: ListView(
-        children: List.generate(meal.length, (index) {
-          return Container(
-            margin: EdgeInsets.all(10),
-            color: Colors.cyanAccent,
-            child: Column(
-              children: [
-                Text(meal[index].title),
-                Text(meal[index].complexity.toString()),
-                Text(meal[index].affordability.toString()),
-              ],
-            ),
-          );
-        }),
+      body: ListView.separated(
+        itemBuilder: (context, index)=> MealListItem(meal: meals[index]),
+        separatorBuilder:(context, index)=> SizedBox(height: 10,),
+        itemCount: meals.length,
       ),
     );
   }

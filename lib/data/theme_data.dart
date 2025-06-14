@@ -6,5 +6,5 @@ final theme = ThemeData(
     seedColor: Color.fromARGB(255, 131, 57, 0),
     brightness: Brightness.light,
   ),
-  textTheme: GoogleFonts.latoTextTheme(),
+  textTheme: GoogleFonts.reggaeOneTextTheme(),
 );
