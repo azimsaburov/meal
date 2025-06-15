@@ -23,7 +23,7 @@ class CategoryGridTile extends StatelessWidget {
         Navigator.pushReplacementNamed(
           context,
           '/meals',
-          arguments: category.title,
+          arguments: [category.title, meals]
         );
       },
       child: Container(

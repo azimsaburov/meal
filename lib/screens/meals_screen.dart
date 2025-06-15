@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:meal/data/dammy_data.dart';
+import 'package:meal/models/meal_model.dart';
 import 'package:meal/widgets/meal_list_item.dart';
 
 class MealsScreen extends StatelessWidget {
@@ -7,8 +7,9 @@ class MealsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final arg = ModalRoute.of(context)?.settings.arguments as String;
-    final String titile = arg;
+    final arg = ModalRoute.of(context)?.settings.arguments as List;
+    final String titile = arg[0];
+    final List<MealModel> meals = arg[1];
     return Scaffold(
       appBar: AppBar(
         title: Text(titile),

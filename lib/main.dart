@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meal/data/theme_data.dart';
 import 'package:meal/screens/categories_screen.dart';
+import 'package:meal/screens/meal_details_screen.dart';
 import 'package:meal/screens/meals_screen.dart';
 
 void main() {
@@ -12,6 +13,7 @@ void main() {
       routes: {
         '/': (context) => CategoriesScreen(),
         '/meals': (context) => MealsScreen(),
+        '/mealsDetail': (context) => MealDetailsScreen(),
 
       },
     ),
