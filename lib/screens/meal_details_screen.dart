@@ -10,7 +10,7 @@ class MealDetailsScreen extends StatelessWidget {
         title: Text('Details'),
         leading: IconButton(
           onPressed: () {
-            Navigator.pushReplacementNamed(context, '/');
+            Navigator.pop(context);
           },
           icon: Icon(Icons.arrow_back_ios_new),
         ),

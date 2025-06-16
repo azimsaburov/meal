@@ -10,7 +10,7 @@ class MealListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap:() {
-        Navigator.pushReplacementNamed(context, '/mealsDetail');
+        Navigator.pushNamed(context, '/mealsDetail');
       },
       child: AspectRatio(
         aspectRatio: 2 / 1,
