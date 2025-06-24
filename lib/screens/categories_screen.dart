@@ -7,9 +7,7 @@ class CategoriesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Hello')),
-      body: GridView.count(
+    return GridView.count(
         crossAxisCount: 2,
         crossAxisSpacing: 20,
         mainAxisSpacing: 16,
@@ -27,7 +25,6 @@ class CategoriesScreen extends StatelessWidget {
             }).toList(),
           ),
         ),
-      ),
-    );
+      );
   }
 }
