@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meal/models/category_model.dart';
 import 'package:meal/models/meal_model.dart';
+import 'package:meal/screens/meals_screen.dart';
 
 class CategoryGridTile extends StatelessWidget {
   final CategoryModel category;
@@ -19,11 +20,16 @@ class CategoryGridTile extends StatelessWidget {
     return InkWell(
       borderRadius: BorderRadius.circular(20),
       splashColor: Colors.black,
-      onTap: () {
-        Navigator.pushReplacementNamed(
-          context,
-          '/meals',
-          arguments: [category.title, meals]
+      onTap:  () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) {
+              return MealsScreen(
+                title: category.title,
+                meal: meals,
+              );
+            },
+          ),
         );
       },
       child: Container(
